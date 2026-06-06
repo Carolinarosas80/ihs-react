@@ -25,27 +25,39 @@ export default function Footer() {
             <div style={S.bTag}>Beauty Travel Distribution</div>
             <p style={S.desc}>{t('footer.desc')}</p>
           </div>
+
           <div>
             <div style={S.colT}>{t('footer.company')}</div>
             <ul style={S.list}>
-              {nav.map(n => <li key={n.id}><button style={S.lItem} onClick={() => go(n.id)}
-                onMouseEnter={e => e.currentTarget.style.color='#c9a84c'}
-                onMouseLeave={e => e.currentTarget.style.color='#2e3d58'}
-              >{t(n.k)}</button></li>)}
+              {nav.map(n => (
+                <li key={n.id}>
+                  <button style={S.lItem} onClick={() => go(n.id)}
+                    onMouseEnter={e => e.currentTarget.style.color='#c9a84c'}
+                    onMouseLeave={e => e.currentTarget.style.color='#ffffff'}
+                  >{t(n.k)}</button>
+                </li>
+              ))}
             </ul>
           </div>
+
           <div>
             <div style={S.colT}>{t('footer.services')}</div>
-            <ul style={S.list}>{svcs.map(s => <li key={s}><span style={S.lTxt}>{s}</span></li>)}</ul>
+            <ul style={S.list}>
+              {svcs.map(s => <li key={s}><span style={S.lTxt}>{s}</span></li>)}
+            </ul>
           </div>
+
           <div>
             <div style={S.colT}>{t('footer.markets')}</div>
-            <ul style={S.list}>{mkts.map(m => <li key={m}><span style={S.lTxt}>{m}</span></li>)}</ul>
+            <ul style={S.list}>
+              {mkts.map(m => <li key={m}><span style={S.lTxt}>{m}</span></li>)}
+            </ul>
           </div>
         </div>
+
         <div style={S.bottom}>
           <span style={S.copy}>© {new Date().getFullYear()} Inter High Supply SRL. {t('footer.rights')}</span>
-          <span style={S.credit}>{t('footer.by')} <a href="https://codigosur.com.ar" target="_blank" rel="noreferrer" style={{ color:'#7a6430' }}>Código Sur</a></span>
+          <span style={S.credit}>{t('footer.by')} <a href="https://codigosur.com.ar" target="_blank" rel="noreferrer" style={{ color:'#c9a84c', textDecoration:'none' }}>Código Sur</a></span>
         </div>
       </div>
     </footer>
@@ -53,18 +65,38 @@ export default function Footer() {
 }
 
 const S = {
-  /* Footer mismo azul casi negro — sin diferencia visual con el resto */
-  footer:{ background:'#05070c', borderTop:'1px solid rgba(201,168,76,0.06)', padding:'60px 80px 36px' },
+  footer:{
+    background:'#06080f',
+    borderTop:'1px solid rgba(201,168,76,0.08)',
+    padding:'65px 80px 38px',
+  },
   inner:{ maxWidth:1240, margin:'0 auto' },
   grid:{ display:'grid', gridTemplateColumns:'2fr 1fr 1fr 1fr', gap:52, marginBottom:52 },
-  bName:{ fontFamily:'Barlow Condensed,sans-serif', fontSize:10.5, fontWeight:700, letterSpacing:'0.22em', color:'#8a9ab8', textTransform:'uppercase' },
-  bTag:{ fontFamily:'Barlow Condensed,sans-serif', fontSize:7, letterSpacing:'0.26em', color:'#2e3d58', textTransform:'uppercase', fontWeight:400, marginBottom:14 },
-  desc:{ fontSize:11, lineHeight:2, color:'#2e3d58', maxWidth:270, fontFamily:'Barlow,sans-serif' },
-  colT:{ fontFamily:'Barlow Condensed,sans-serif', fontSize:7.5, letterSpacing:'0.3em', textTransform:'uppercase', color:'#7a6430', marginBottom:16, fontWeight:700 },
-  list:{ listStyle:'none', display:'flex', flexDirection:'column', gap:8 },
-  lItem:{ fontSize:11, color:'#2e3d58', background:'none', border:'none', cursor:'pointer', padding:0, textAlign:'left', fontFamily:'Barlow,sans-serif', transition:'color 0.3s' },
-  lTxt:{ fontSize:11, color:'#2e3d58', fontFamily:'Barlow,sans-serif' },
-  bottom:{ display:'flex', justifyContent:'space-between', alignItems:'center', paddingTop:28, borderTop:'1px solid rgba(255,255,255,0.03)', flexWrap:'wrap', gap:10 },
-  copy:{ fontSize:9.5, color:'#1a2030', letterSpacing:'0.06em', fontFamily:'Barlow,sans-serif' },
-  credit:{ fontSize:9.5, color:'#1a2030', fontFamily:'Barlow,sans-serif' },
+  bName:{
+    fontFamily:'Barlow Condensed,sans-serif', fontSize:11, fontWeight:700,
+    letterSpacing:'0.22em', color:'#ffffff', textTransform:'uppercase',
+  },
+  bTag:{
+    fontFamily:'Barlow Condensed,sans-serif', fontSize:7.5, letterSpacing:'0.26em',
+    color:'#c9a84c', textTransform:'uppercase', fontWeight:400, marginBottom:16,
+  },
+  desc:{ fontSize:12, lineHeight:2, color:'#c8d4e8', maxWidth:280, fontFamily:'Barlow,sans-serif' },
+  colT:{
+    fontFamily:'Barlow Condensed,sans-serif', fontSize:8, letterSpacing:'0.3em',
+    textTransform:'uppercase', color:'#c9a84c', marginBottom:18, fontWeight:700,
+  },
+  list:{ listStyle:'none', display:'flex', flexDirection:'column', gap:10 },
+  lItem:{
+    fontSize:12, color:'#ffffff', background:'none', border:'none',
+    cursor:'pointer', padding:0, textAlign:'left',
+    fontFamily:'Barlow,sans-serif', transition:'color 0.3s',
+  },
+  lTxt:{ fontSize:12, color:'#c8d4e8', fontFamily:'Barlow,sans-serif' },
+  bottom:{
+    display:'flex', justifyContent:'space-between', alignItems:'center',
+    paddingTop:30, borderTop:'1px solid rgba(255,255,255,0.05)',
+    flexWrap:'wrap', gap:10,
+  },
+  copy:{ fontSize:10, color:'#8a9ab8', letterSpacing:'0.06em', fontFamily:'Barlow,sans-serif' },
+  credit:{ fontSize:10, color:'#8a9ab8', fontFamily:'Barlow,sans-serif' },
 }

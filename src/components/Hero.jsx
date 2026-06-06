@@ -115,7 +115,7 @@ const S = {
   l1:{ fontSize:'clamp(34px,4.5vw,66px)', fontWeight:300, color:'#f0f4fc', letterSpacing:'-0.01em' },
   l2:{ fontSize:'clamp(34px,4.5vw,66px)', fontWeight:300, color:'#4a5a78', letterSpacing:'-0.01em' },
   l3:{ fontSize:'clamp(34px,4.5vw,66px)', fontStyle:'italic', fontWeight:300, color:'#8a9ab8', letterSpacing:'-0.01em' },
-  sub:{ fontSize:12.5, lineHeight:2.1, color:'#2e3d58', maxWidth:460, marginBottom:42, fontFamily:'Barlow,sans-serif' },
+  sub:{ fontSize:12.5, lineHeight:2.1, color:'#eef0f3', maxWidth:460, marginBottom:42, fontFamily:'Barlow,sans-serif' },
   actions:{ display:'flex', gap:18, alignItems:'center', flexWrap:'wrap' },
   secBtn:{ fontFamily:'Barlow Condensed,sans-serif', fontSize:9.5, letterSpacing:'0.2em', textTransform:'uppercase', color:'#2e3d58', background:'none', border:'none', cursor:'pointer', fontWeight:500 },
   strip:{ position:'absolute', bottom:0, left:0, right:0, zIndex:4, display:'flex', borderTop:'1px solid rgba(201,168,76,0.08)' },
