@@ -85,7 +85,7 @@ export default function Navbar() {
 const LB = ({ active, onClick, children }) => (
   <button onClick={onClick} style={{
     background:'none', border: active ? '1px solid #c9a84c' : '1px solid transparent',
-    color: active ? '#c9a84c' : '#2e3d58',
+    color: active ? '#c9a84c' : '#f4f6f9',
     fontFamily:'Barlow Condensed,sans-serif', fontSize:9, letterSpacing:'0.2em',
     textTransform:'uppercase', padding:'3px 10px', cursor:'pointer', fontWeight:500,
   }}>{children}</button>
@@ -119,7 +119,7 @@ const S = {
     fontSize:11, fontWeight:700, letterSpacing:'0.24em',
     color:'#f0f4fc', textTransform:'uppercase', lineHeight:1.5, textAlign:'left',
   },
-  brandSub:{ fontFamily:'Barlow Condensed,sans-serif', fontSize:7.5, letterSpacing:'0.2em', color:'#2e3d58', fontWeight:400, display:'block', textAlign:'left' },
+  brandSub:{ fontFamily:'Barlow Condensed,sans-serif', fontSize:7.5, letterSpacing:'0.2em', color:'#c9a84c', fontWeight:400, display:'block', textAlign:'left' },
   links:{ display:'flex', gap:30, listStyle:'none', alignItems:'center' },
   link:{ color:'#ffffff', fontSize:9.5, letterSpacing:'0.18em', textTransform:'uppercase', fontWeight:500, cursor:'pointer', transition:'color 0.3s', fontFamily:'Barlow Condensed,sans-serif', background:'none', border:'none' },
   ctaBtn:{ padding:'7px 20px', border:'1px solid #c9a84c', color:'#c9a84c', fontFamily:'Barlow Condensed,sans-serif', fontSize:9.5, letterSpacing:'0.2em', textTransform:'uppercase', fontWeight:600, cursor:'pointer', background:'transparent', transition:'all 0.3s' },
