@@ -43,7 +43,8 @@ export default function Contact() {
             <div style={S.details}>
               {[
                 { ico:'✉', label:'Email', val:'info@interhighsupply.com', href:'mailto:info@interhighsupply.com' },
-                { ico:'◎', label:t('contact.loc'), val:'Buenos Aires, Argentina' },
+                { ico:'◎', label:t('contact.loc'), val: 'Montevideo, Uruguay' },
+                { ico:'◎', label:t('contact.loc'), val: 'Buenos Aires , Argentina' },
                 { ico:'◉', label:t('contact.cov'), val:'Latinoamérica / South America' },
               ].map((item,i) => (
                 <div key={i} style={S.dItem}>

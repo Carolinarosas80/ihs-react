@@ -17,7 +17,7 @@ export default function Footer() {
       <div style={S.inner}>
         <div style={S.grid}>
           <div>
-            <img src="/logodoradoihs.jpg" alt="IHS"
+            <img src="/logoredondoazul.jpg" alt="IHS"
               style={{ width:36, height:36, objectFit:'contain', borderRadius:'50%', marginBottom:12 }}
               onError={e => e.target.style.display='none'}
             />

@@ -46,7 +46,7 @@ export default function Navbar() {
       <nav style={{ ...S.nav, ...(scrolled ? S.navSc : {}) }}>
         <button style={S.logoWrap} onClick={() => window.scrollTo({ top:0, behavior:'smooth' })}>
           <img
-            src="/logodoradoihs.jpg"
+            src="/logoredondoazul.jpg"
             alt="Inter High Supply"
             style={S.logoImg}
             onError={e => { e.target.style.display='none' }}
