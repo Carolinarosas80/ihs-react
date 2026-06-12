@@ -18,7 +18,7 @@ export default function Footer() {
         <div style={S.grid}>
           <div>
             <img src="/logoredondoazul.jpg" alt="IHS"
-              style={{ width:36, height:36, objectFit:'contain', borderRadius:4, marginBottom:12 }}
+              style={{ width:40, height:40, objectFit:'contain', borderRadius:4, marginBottom:12 }}
               onError={e => e.target.style.display='none'}
             />
             <div style={S.bName}>INTER HIGH SUPPLY</div>

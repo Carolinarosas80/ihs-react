@@ -113,7 +113,7 @@ const S = {
     borderBottom:'1px solid rgba(201,168,76,0.07)',
   },
   logoWrap:{ display:'flex', alignItems:'center', gap:10, background:'none', border:'none', cursor:'pointer', padding:0 },
-  logoImg:{ width:36, height:36, objectFit:'contain', borderRadius:4 },
+  logoImg:{ width:40, height:36, objectFit:'contain', borderRadius:4 },
   brandName:{
     fontFamily:'Barlow Condensed,sans-serif',
     fontSize:11, fontWeight:700, letterSpacing:'0.24em',
