@@ -55,10 +55,23 @@ function SCard({ svc, lang, vis, delay }) {
 }
 
 const S = {
-  section:{ padding:'110px 80px', background:'#06080f' },
-  header:{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:56, alignItems:'end', maxWidth:1240, margin:'0 auto 56px' },
+  section:{ padding:'80px 24px', background:'#06080f' },
+  header:{
+    display:'grid',
+    gridTemplateColumns:'repeat(auto-fit, minmax(240px, 1fr))',
+    gap:32,
+    alignItems:'end',
+    maxWidth:1240,
+    margin:'0 auto 48px',
+  },
   sub:{ fontSize:12.5, lineHeight:2.1, color:'#c8d4e8', fontFamily:'Barlow,sans-serif' },
-  grid:{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:12, maxWidth:1240, margin:'0 auto' },
+  grid:{
+    display:'grid',
+    gridTemplateColumns:'repeat(auto-fit, minmax(260px, 1fr))',
+    gap:12,
+    maxWidth:1240,
+    margin:'0 auto',
+  },
   card:{ border:'1px solid rgba(255,255,255,0.04)', padding:'38px 30px 34px', position:'relative', overflow:'hidden', cursor:'default', background:'transparent', transition:'border-color 0.4s, background 0.4s' },
   cardH:{ borderColor:'rgba(37,80,184,0.28)', background:'rgba(37,80,184,0.04)' },
   num:{ position:'absolute', right:14, top:10, fontFamily:'Playfair Display,serif', fontSize:52, fontWeight:300, color:'rgba(201,168,76,0.04)', lineHeight:1, userSelect:'none' },

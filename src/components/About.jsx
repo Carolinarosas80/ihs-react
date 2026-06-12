@@ -47,13 +47,20 @@ export default function About() {
 }
 
 const S = {
-  section:{ padding:'110px 80px', background:'#06080f', position:'relative', overflow:'hidden' },
-  wm:{ position:'absolute', right:'-2%', top:'50%', transform:'translateY(-50%)', fontFamily:'Playfair Display,serif', fontSize:200, fontWeight:300, color:'rgba(201,168,76,0.02)', lineHeight:1, userSelect:'none', pointerEvents:'none' },
-  grid:{ display:'grid', gridTemplateColumns:'1.3fr 0.7fr', gap:80, alignItems:'center', maxWidth:1240, margin:'0 auto' },
+  section:{ padding:'80px 24px', background:'#06080f', position:'relative', overflow:'hidden' },
+  wm:{ position:'absolute', right:'-2%', top:'50%', transform:'translateY(-50%)', fontFamily:'Playfair Display,serif', fontSize:'clamp(80px,15vw,200px)', fontWeight:300, color:'rgba(201,168,76,0.02)', lineHeight:1, userSelect:'none', pointerEvents:'none' },
+  grid:{
+    display:'grid',
+    gridTemplateColumns:'repeat(auto-fit, minmax(280px, 1fr))',
+    gap:48,
+    alignItems:'center',
+    maxWidth:1240,
+    margin:'0 auto',
+  },
   p:{ fontSize:13.5, lineHeight:2.2, color:'#ffffff', marginBottom:16, fontFamily:'Barlow,sans-serif' },
   line:{ width:56, height:1, background:'linear-gradient(90deg,#c9a84c,transparent)', marginTop:28 },
   imgWrap:{ position:'relative' },
   imgFrame:{ position:'absolute', inset:'-10px 10px 10px -10px', border:'1px solid rgba(201,168,76,0.1)', zIndex:0 },
-  img:{ width:'100%', height:340, objectFit:'cover', objectPosition:'center top', filter:'brightness(0.45) saturate(0.35)', position:'relative', zIndex:1 },
+  img:{ width:'100%', height:300, objectFit:'cover', objectPosition:'center top', filter:'brightness(0.45) saturate(0.35)', position:'relative', zIndex:1 },
   imgOv:{ position:'absolute', inset:0, zIndex:2, background:'linear-gradient(180deg,rgba(6,8,15,0.15) 0%,rgba(6,8,15,0.55) 100%)' },
 }

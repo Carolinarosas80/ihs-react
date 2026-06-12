@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react'
 import { useT } from '../i18n.js'
 
@@ -46,16 +47,9 @@ export default function Hero() {
 
   return (
     <section id="home" style={S.section}>
-      {/* Fondo base azul casi negro */}
       <div style={S.base} />
-
-      {/* Imagen avión de carga — tenue, concepto transparente */}
       <div style={S.planeImg} />
-
-      {/* Partículas doradas sutiles */}
       <canvas ref={canvasRef} style={S.canvas} />
-
-      {/* Degradado izquierdo para legibilidad */}
       <div style={S.fade} />
 
       <div style={S.content}>
@@ -95,9 +89,12 @@ export default function Hero() {
 }
 
 const S = {
-  section:{ minHeight:'100vh', position:'relative', overflow:'hidden', display:'flex', flexDirection:'column', justifyContent:'center', padding:'160px 80px 100px' },
+  section:{
+    minHeight:'100vh', position:'relative', overflow:'hidden',
+    display:'flex', flexDirection:'column', justifyContent:'center',
+    padding:'140px 24px 180px',
+  },
   base:{ position:'absolute', inset:0, zIndex:0, background:'linear-gradient(160deg,#05070e 0%,#07090f 50%,#080b14 100%)' },
-  /* Avión de carga — Unsplash. Reemplazar con /avionCarga.jpg cuando el cliente lo provea */
   planeImg:{
     position:'absolute', inset:0, zIndex:1,
     backgroundImage:"url('/avionCarga.jpg')",
@@ -111,15 +108,18 @@ const S = {
   eyebrow:{ fontFamily:'Barlow Condensed,sans-serif', fontSize:8.5, letterSpacing:'0.42em', textTransform:'uppercase', color:'#7a6430', fontWeight:600, marginBottom:24, display:'flex', alignItems:'center', gap:14 },
   eyeLine:{ display:'block', width:28, height:1, background:'#7a6430', flexShrink:0 },
   h1:{ fontFamily:'Playfair Display,serif', lineHeight:1.05, marginBottom:24, display:'flex', flexDirection:'column' },
-  /* 2 tamaños menos: clamp(34,4.5vw,66) */
-  l1:{ fontSize:'clamp(34px,4.5vw,66px)', fontWeight:300, color:'#f0f4fc', letterSpacing:'-0.01em' },
-  l2:{ fontSize:'clamp(34px,4.5vw,66px)', fontWeight:300, color:'#4a5a78', letterSpacing:'-0.01em' },
-  l3:{ fontSize:'clamp(34px,4.5vw,66px)', fontStyle:'italic', fontWeight:300, color:'#8a9ab8', letterSpacing:'-0.01em' },
+  l1:{ fontSize:'clamp(28px,4.5vw,66px)', fontWeight:300, color:'#f0f4fc', letterSpacing:'-0.01em' },
+  l2:{ fontSize:'clamp(28px,4.5vw,66px)', fontWeight:300, color:'#4a5a78', letterSpacing:'-0.01em' },
+  l3:{ fontSize:'clamp(28px,4.5vw,66px)', fontStyle:'italic', fontWeight:300, color:'#8a9ab8', letterSpacing:'-0.01em' },
   sub:{ fontSize:12.5, lineHeight:2.1, color:'#eef0f3', maxWidth:460, marginBottom:42, fontFamily:'Barlow,sans-serif' },
   actions:{ display:'flex', gap:18, alignItems:'center', flexWrap:'wrap' },
   secBtn:{ fontFamily:'Barlow Condensed,sans-serif', fontSize:9.5, letterSpacing:'0.2em', textTransform:'uppercase', color:'#2e3d58', background:'none', border:'none', cursor:'pointer', fontWeight:500 },
-  strip:{ position:'absolute', bottom:0, left:0, right:0, zIndex:4, display:'flex', borderTop:'1px solid rgba(201,168,76,0.08)' },
-  statItem:{ flex:1, padding:'20px 32px', background:'rgba(6,8,15,0.75)', display:'flex', flexDirection:'column', gap:4 },
-  statN:{ fontFamily:'Playfair Display,serif', fontSize:24, fontWeight:300, color:'#c9a84c', lineHeight:1 },
-  statL:{ fontFamily:'Barlow Condensed,sans-serif', fontSize:7.5, letterSpacing:'0.22em', textTransform:'uppercase', color:'#2e3d58', fontWeight:500 },
+  strip:{
+    position:'absolute', bottom:0, left:0, right:0, zIndex:4,
+    display:'grid', gridTemplateColumns:'repeat(2, 1fr)',
+    borderTop:'1px solid rgba(201,168,76,0.08)',
+  },
+  statItem:{ padding:'16px 20px', background:'rgba(6,8,15,0.75)', display:'flex', flexDirection:'column', gap:4, borderBottom:'1px solid rgba(201,168,76,0.04)' },
+  statN:{ fontFamily:'Playfair Display,serif', fontSize:22, fontWeight:300, color:'#c9a84c', lineHeight:1 },
+  statL:{ fontFamily:'Barlow Condensed,sans-serif', fontSize:7, letterSpacing:'0.2em', textTransform:'uppercase', color:'#2e3d58', fontWeight:500 },
 }

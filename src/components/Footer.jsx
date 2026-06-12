@@ -18,7 +18,7 @@ export default function Footer() {
         <div style={S.grid}>
           <div>
             <img src="/logoredondoazul.jpg" alt="IHS"
-              style={{ width:36, height:36, objectFit:'contain', borderRadius:'50%', marginBottom:12 }}
+              style={{ width:36, height:36, objectFit:'contain', borderRadius:4, marginBottom:12 }}
               onError={e => e.target.style.display='none'}
             />
             <div style={S.bName}>INTER HIGH SUPPLY</div>
@@ -68,10 +68,15 @@ const S = {
   footer:{
     background:'#06080f',
     borderTop:'1px solid rgba(201,168,76,0.08)',
-    padding:'65px 80px 38px',
+    padding:'65px 24px 38px',
   },
   inner:{ maxWidth:1240, margin:'0 auto' },
-  grid:{ display:'grid', gridTemplateColumns:'2fr 1fr 1fr 1fr', gap:52, marginBottom:52 },
+  grid:{
+    display:'grid',
+    gridTemplateColumns:'repeat(auto-fit, minmax(160px, 1fr))',
+    gap:40,
+    marginBottom:52,
+  },
   bName:{
     fontFamily:'Barlow Condensed,sans-serif', fontSize:11, fontWeight:700,
     letterSpacing:'0.22em', color:'#ffffff', textTransform:'uppercase',

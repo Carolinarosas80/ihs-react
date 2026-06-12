@@ -95,9 +95,16 @@ export default function Contact() {
 }
 
 const S = {
-  section:{ padding:'110px 80px', position:'relative', overflow:'hidden', background:'#07090f' },
+  section:{ padding:'80px 24px', position:'relative', overflow:'hidden', background:'#07090f' },
   bgOv:{ position:'absolute', inset:0, background:'rgba(6,8,15,0.6)' },
-  grid:{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:80, maxWidth:1240, margin:'0 auto', alignItems:'start' },
+  grid:{
+    display:'grid',
+    gridTemplateColumns:'repeat(auto-fit, minmax(280px, 1fr))',
+    gap:48,
+    maxWidth:1240,
+    margin:'0 auto',
+    alignItems:'start',
+  },
   lead:{ fontSize:12.5, lineHeight:2.1, color:'#2e3d58', margin:'14px 0 34px', fontFamily:'Barlow,sans-serif' },
   details:{ display:'flex', flexDirection:'column', gap:16 },
   dItem:{ display:'flex', alignItems:'flex-start', gap:12 },

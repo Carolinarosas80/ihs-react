@@ -13,7 +13,7 @@ export default function Markets() {
 
   return (
     <section id="markets" ref={ref} style={S.section}>
-      <div style={{ textAlign:'center', maxWidth:560, margin:'0 auto 58px', opacity:vis?1:0, transform:vis?'translateY(0)':'translateY(20px)', transition:'all 0.85s' }}>
+      <div style={{ textAlign:'center', maxWidth:560, margin:'0 auto 48px', opacity:vis?1:0, transform:vis?'translateY(0)':'translateY(20px)', transition:'all 0.85s' }}>
         <div className="section-tag center">{t('markets.tag')}</div>
         <h2 className="section-title" style={{ textAlign:'center' }}>
           <em>{t('markets.title').split(' ').slice(0,2).join(' ')}</em>{' '}
@@ -52,9 +52,15 @@ function Card({ m, lang, vis, delay }) {
 }
 
 const S = {
-  section:{ padding:'110px 80px', background:'#06080f' },
+  section:{ padding:'80px 24px', background:'#06080f' },
   sub:{ fontSize:12, lineHeight:2, color:'#c8d4e8', marginTop:12, fontFamily:'Barlow,sans-serif' },
-  grid:{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:12, maxWidth:1240, margin:'0 auto' },
+  grid:{
+    display:'grid',
+    gridTemplateColumns:'repeat(auto-fit, minmax(220px, 1fr))',
+    gap:12,
+    maxWidth:1240,
+    margin:'0 auto',
+  },
   card:{ background:'#0c1020', border:'1px solid rgba(255,255,255,0.04)', position:'relative', overflow:'hidden', transition:'border-color 0.4s', cursor:'default' },
   cardH:{ borderColor:'rgba(201,168,76,0.2)' },
   imgWrap:{ overflow:'hidden', height:185, position:'relative' },

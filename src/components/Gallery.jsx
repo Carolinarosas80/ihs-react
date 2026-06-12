@@ -19,7 +19,7 @@ export default function Gallery() {
           {t('gallery.title').split(' ')[0]} <em>{t('gallery.title').split(' ').slice(1).join(' ')}</em>
         </h2>
       </div>
-      <div style={S.grid}>
+      <div className="gallery-grid">
         {GALLERY_DATA.map((item, i) => <GItem key={i} item={item} lang={lang} vis={vis} delay={i*0.08} />)}
       </div>
     </section>
@@ -30,24 +30,20 @@ function GItem({ item, lang, vis, delay }) {
   const [hov, setHov] = useState(false)
   return (
     <div
-      style={{ ...S.item, ...item.style, opacity:vis?1:0, transform:vis?'translateY(0)':'translateY(18px)', transition:`opacity 0.85s ease ${delay+0.1}s, transform 0.85s ease ${delay+0.1}s` }}
+      className="gallery-item"
+      style={{ ...item.style, opacity:vis?1:0, transform:vis?'translateY(0)':'translateY(18px)', transition:`opacity 0.85s ease ${delay+0.1}s, transform 0.85s ease ${delay+0.1}s` }}
       onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
     >
       <img src={item.src} alt={item.cap[lang]}
-        style={{ ...S.img, filter:`brightness(${hov?0.55:0.38}) saturate(${hov?0.45:0.28})`, transform:hov?'scale(1.05)':'scale(1)' }}
+        style={{ width:'100%', height:'100%', objectFit:'cover', transition:'filter 0.55s, transform 0.6s', filter:`brightness(${hov?0.55:0.38}) saturate(${hov?0.45:0.28})`, transform:hov?'scale(1.05)':'scale(1)' }}
       />
-      <div style={{ ...S.ov, opacity:hov?1:0 }}>
-        <span style={S.cap}>{item.cap[lang]}</span>
+      <div style={{ position:'absolute', inset:0, background:'linear-gradient(180deg,transparent 40%,rgba(7,9,15,0.88) 100%)', display:'flex', alignItems:'flex-end', padding:'14px 16px', transition:'opacity 0.4s', opacity:hov?1:0 }}>
+        <span style={{ fontFamily:'Barlow Condensed,sans-serif', fontSize:8.5, letterSpacing:'0.18em', textTransform:'uppercase', color:'#c9a84c', fontWeight:600 }}>{item.cap[lang]}</span>
       </div>
     </div>
   )
 }
 
 const S = {
-  section:{ padding:'110px 80px', background:'#080b14' },
-  grid:{ display:'grid', gridTemplateColumns:'repeat(12,1fr)', gridTemplateRows:'repeat(2,195px)', gap:6, maxWidth:1240, margin:'0 auto' },
-  item:{ overflow:'hidden', position:'relative', cursor:'default' },
-  img:{ width:'100%', height:'100%', objectFit:'cover', transition:'filter 0.55s, transform 0.6s' },
-  ov:{ position:'absolute', inset:0, background:'linear-gradient(180deg,transparent 40%,rgba(7,9,15,0.88) 100%)', display:'flex', alignItems:'flex-end', padding:'14px 16px', transition:'opacity 0.4s' },
-  cap:{ fontFamily:'Barlow Condensed,sans-serif', fontSize:8.5, letterSpacing:'0.18em', textTransform:'uppercase', color:'#c9a84c', fontWeight:600 },
+  section:{ padding:'110px 24px', background:'#080b14' },
 }
